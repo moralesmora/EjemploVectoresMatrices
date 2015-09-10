@@ -12,11 +12,29 @@ import ejemplo.bo.Persona;
 public class Ventana extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private static final int ESPERA = 500;
+	private static final int ESPERA = 1000;
 	
 	private JButton botones[][];
 	
-	public Ventana(int f, int c) {
+	public <T> Ventana(T v[]) {
+		this.init(1, v.length);
+	}
+	
+	public Ventana(int[] v) {
+		this.init(1, v.length);
+		this.visualizarVector(v);
+	}
+	
+	public Ventana(double[] v) {
+		this.init(1, v.length);
+		this.visualizarVector(v);
+	}
+	
+	public Ventana(Persona[] v) {
+		this.init(1, v.length);
+	}
+
+	private void init(int f, int c) {
 		
 		this.setSize(600, 600);
 		
@@ -36,6 +54,7 @@ public class Ventana extends JFrame {
 		
 		this.setVisible(true);
 	}
+	
 	
 	public void visualizarVector(int v[]) {
 		for (int i = 0; i < v.length; i++) {

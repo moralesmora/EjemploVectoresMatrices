@@ -1,12 +1,33 @@
+
+// Se indica el paquete donde se encuentra esta clase
 package ejemplo.bo;
 
+// Se importa la clase Color para poder resaltar cosas
+// en la ventan
 import java.awt.Color;
+
+// Se importa la clase Random para números aleatorios
 import java.util.Random;
 
+// Se importa la clase Ventana que se encuentra dentro de este proyecto,
+// pero dentro de otro paquete
 import ejemplo.ui.Ventana;
 
+/**
+ * 
+ * Esta es la clase Vector que solamente se utiliza para llamar a los métodos
+ * que van a poner visualizaciones de vectores o arrays en pequeñas ventanas
+ * con distintos tipos de datos.
+ * 
+ * @author Rubén Jiménez Goñi
+ */
 public class Vector {
 
+	/**
+	 * Este método crea un objeto Ventana y un vector de enteros,
+	 * posteriormente recorre el vector de distintas formas que se visualizan
+	 * en la ventana.
+	 */
 	public void ejemploVectorInt() {
 
 		// Objeto Random para valores aleatorios
@@ -17,12 +38,12 @@ public class Vector {
 		//
 		// Visualmente sería algo así
 		//
-		// { ?, ?, ?, ?, ?}
+		// {__?,___?,___?,___?,___?}
 		// v[0] v[1] v[2] v[3] v[4]
 		//
 		// El vector se recorre con índices que van desde
 		// 0 hasta n - 1, donde n es el tamaño del vector
-		int v[] = new int[r.nextInt(5) + 5];
+		int v[] = new int[5];
 
 		// v es un objeto de tipo int[]
 		// que tiene un atributo público length
@@ -38,8 +59,7 @@ public class Vector {
 			System.out.println(" se encuentra " + v[i]);
 		}
 
-		Ventana ventana = new Ventana(1, v.length);
-		ventana.visualizarVector(v);
+		Ventana ventana = new Ventana(v);
 
 		for (int i = 0; i < v.length; i++) {
 			ventana.resaltar(0, i, Color.GREEN);
@@ -56,7 +76,7 @@ public class Vector {
 		for (int i = v.length - 1; i >= 0; i -= 2) {
 			ventana.resaltar(0, i, Color.RED);
 		}
-
+		
 		for (int i = 0; i < v.length; i++) {
 			
 			ventana.marcar(0, i, Color.BLUE);
@@ -96,7 +116,7 @@ public class Vector {
 		Random r = new Random();
 		
 		double v[] = new double[3];
-		Ventana ventana = new Ventana(1, 3);
+		Ventana ventana = new Ventana(v);
 
 		for (int i = 0; i < v.length; i++) {
 			v[i] = r.nextDouble();
@@ -108,16 +128,17 @@ public class Vector {
 	
 	public void ejemploVectorPersona() {
 		
+		Random r = new Random();
+		
 		Persona personas[] = new Persona[3];
 		String nombres[] = {"Juan", "Agustino", "Carolina"};
-		Ventana ventana = new Ventana(1, 3);
+		Ventana ventana = new Ventana(personas);
 		
 		for (int i = 0; i < personas.length; i++) {
-			personas[i] = new Persona(i, nombres[i]);
+			personas[i] = new Persona(i, nombres[r.nextInt(3)]);
 		}
 		
 		ventana.visualizarVector(personas);
-		
 		
 	}
 	
