@@ -2,9 +2,9 @@
 // Se indica el paquete donde se encuentra esta clase
 package ejemplo.main;
 
-// Se importa la clase Vector que se encuentra dentro
+// Se importa la clase Animador que se encuentra dentro
 // de este proyecto, pero en otro paquete.
-import ejemplo.bo.Vector;
+import ejemplo.bo.Animador;
 
 
 /**
@@ -23,27 +23,28 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		// Se crea un objeto de la clase Vector
+		// Se crea un objeto de la clase Animador
 		// de nuestro proyecto
-		Vector v = new Vector();
+		Animador anim = new Animador();
 
 		// ========================================================
 		// == Ejemplos ============================================
 		// ========================================================
 		
 		/*
-		 * NOTA: Comente o descomente líneas de código, 
+		 * NOTA: 
+		 * Comente o descomente líneas de código, 
 		 * según necesite
 		 */
 		
 		// Se corren los ejemplos de vectores de int
-		// v.ejemploVectorInt();
+		anim.ejemploVectorInt();
 
 		// Se corren los ejemplos de vectores de double
-		// v.ejemploVectorDouble();
+		anim.ejemploVectorDouble();
 		
 		// Se corren los ejemplos de vectores de Persona
-		v.ejemploVectorPersona();
+		anim.ejemploVectorPersona();
 	}
 
 }
